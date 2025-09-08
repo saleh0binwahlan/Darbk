@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>الرسائل المستلمة - منصة دربك</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>رسائل العملاء</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="courses.html">الدورات</a></li>
+        <li><a href="77.html">العروض</a></li>
+        <li><a href="contact.html">تواصل معنا</a></li>
+        <li><a href="messages.html">عرض الرسائل</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="messages">
+    <h2>الرسائل المحفوظة</h2>
+    <div id="messagesContainer"></div>
+  </section>
+
+  <footer class="footer">
+  <p>© جميع الحقوق محفوظة منصة دربك 2025</p>
+  <div class="social-icons">
+    <a href="https://wa.me/967773884115" target="_blank" aria-label="واتساب">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="https://instagram.com/s.a_w6" target="_blank" aria-label="انستقرام">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://t.me/YourTelegramUsername" target="_blank" aria-label="تيليجرام">
+      <i class="fab fa-telegram-plane"></i>
+    </a>
+  </div>
+</footer>
+
+
+  <script>
+    const messages = JSON.parse(localStorage.getItem("contactMessages")) || [];
+
+    const container = document.getElementById("messagesContainer");
+
+    if (messages.length === 0) {
+      container.innerHTML = "<p>لا توجد رسائل حتى الآن.</p>";
+    } else {
+      messages.forEach((msg, index) => {
+        const card = document.createElement("div");
+        card.className = "message-card";
+        card.innerHTML = `
+          <h3>رسالة ${index + 1}</h3>
+          <p><strong>الاسم:</strong> ${msg.name}</p>
+          <p><strong>رقم الهاتف:</strong> ${msg.phone}</p>
+          <p><strong>الرسالة:</strong><br>${msg.message}</p>
+          <p><small>📅 التاريخ: ${msg.time}</small></p>
+          <hr>
+        `;
+        container.appendChild(card);
+      });
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>الدورات - منصة دربك</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="search-container">
+  <input type="text" id="searchBox" placeholder="ابحث عن دورة...">
+  <button onclick="searchCourses()">
+    <i class="fas fa-search"></i>
+  </button>
+</div>
+
+  <header>
+    <h1>منصة دربك</h1>
+    <button id="toggle-mode" class="mode-btn">🌙</button>
+    <nav>
+      <ul>
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="courses.html">الدورات</a></li>
+        <li><a href="contact.html">تواصل معنا</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="courses">
+    <h2>الدورات التدريبية</h2>
+
+    <!-- الفلاتر -->
+    <div class="filter-buttons">
+      <button onclick="filterCourses('الكل')">الكل</button>
+      <button onclick="filterCourses('برمجة')">برمجة</button>
+      <button onclick="filterCourses('تصميم')">تصميم</button>
+      <button onclick="filterCourses('تسويق')">تسويق</button>
+      <button onclick="filterCourses('ريادة')">الامن السيبراني</button>
+      <button onclick="filterCourses('تطوير')">التداول</button>
+    </div>
+
+    <!-- قائمة الدورات -->
+    <div class="course-list">
+
+      <!-- 🔹 قسم البرمجة -->
+      <div class="course-card" data-category="برمجة">
+        <img src="images/1.jpg" alt="22">
+        <div class="course-info">
+          <h3>مقدمة في البرمجة</h3>
+          <p>ابدأ أساسيات البرمجة بلغة سهلة للمبتدئين.</p>
+          <p class="price">99 ريال</p>
+          <a href="checkout.html" class="enroll-btn">اشترِ الآن</a>
+        </div>
+      </div>
+      <div class="course-card" data-category="برمجة">
+        <img src="images/2.jpg" alt="23">
+        <div class="course-info">
+          <h3>برمجة الويب HTML/CSS</h3>
+          <p>تعلم بناء صفحات المواقع بلغة HTML و CSS.</p>
+          <p class="price">40 ريال</p>
+          <a href="checkout.html" class="enroll-btn">اشترِ الآن</a>
+        </div>
+      </div>
+      <div class="course-card" data-category="برمجة">
+        <img src="images/3.jpg" alt="23">
+        <div class="course-info">
+          <h3>برمجة تطبيقات الهواتف</h3>
+          <p>تعلم برمجة تطبيقات الهواتف.</p>
+          <p class="price">30 ريال</p>
+          <a href="checkout.html" class="enroll-btn">اشترِ الآن</a>
+        </div>
+      </div>
+      <div class="course-card" data-category="برمجة">
+        <img src="images/4.jpg" alt="23">
+        <div class="course-info">
+          <h3>مهارات حل المشاكل</h3>
+          <p>تعلم حل المشكلات البرمجية.</p>
+          <p class="price">15 ريال</p>
+          <a href="checkout.html" class="enroll-btn">اشترِ الآن</a>
+        </div>
+      </div>
+      <div class="course-card" data-category="برمجة">
+        <img src="images/5.jpg" alt="23">
+        <div class="course-info">
+          <h3>لغة البرمجة كولتن</h3>
+          <p>تعلم واحتراف برمجة تطبيقات الهواتف الذكية.</p>
+          <p class="price">30 ريال</p>
+          <a href="checkout.html" class="enroll-btn">اشترِ الآن</a>
+        </div>
+      </div>
+      <div class="course-card" data-category="برمجة">
+        <img src="images/6.jpg" alt="course-card">
+        <div class="course-info">
+          <h3>JavaScript للمبتدئين</h3>
+          <p>أضف تفاعل لمواقعك باستخدام JavaScript.</p>
+          <p class="price">30 ريال</p>
+          <a href="checkout.html" class="enroll-btn">اشترِ الآن</a>
+        </div>
+      </div>
+      <div class="course-card" data-category="برمجة">
+        <img src="images/python-course.jpg" alt="Python Course">
+        <div class="course-info">
+          <h3>Python من الصفر</h3>
+          <p>اكتشف أساسيات بايثون واستخدامها في التطبيقات.</p>
+          <p class="price">30 ريال</p>
+          <a href="checkout.html" class="enroll-btn">اشترِ الآن</a>
+        </div>
+      </div>
+      <div class="course-card" data-category="برمجة">
+        <img src="images/7.jpg" alt="1">
+        <div class="course-info">
+          <h3>قواعد البيانات SQL</h3>
+          <p>تعلم تخزين البيانات باستخدام SQL وMySQL.</p>
+          <p class="price">20 ريال</p>
+          <a href="checkout.html" class="enroll-btn">اشترِ الآن</a>
+        </div>
+      </div>
+      <div class="course-card" data-category="تصميم">
+        <img src="images/8.jpg" alt="2">
+        <div class="course-info">
+          <h3>أساسيات التصميم الجرافيكي</h3>
+          <p>تعلم مبادئ التصميم وبناء هوية بصرية قوية.</p>
+          <p class="price">25 ريال</p>
+          <a href="checkout.html" class="enroll-btn">اشترِ الآن</a>
+        </div>
+      </div>
+      <div class="course-card" data-category="تصميم">
+  <img src="images/9.jpg" alt="3">
+  <div class="course-info">
+    <h3>التصميم باستخدام بلندر</h3>
+    <p>ابدأ تعلم تصميم المجسمات واضافة الحركة والمؤثرات عليها.</p>
+    <p class="price">25 ريال</p>
+    <a href="checkout.html" class="enroll-btn">اشترِ الآن</a>
+  </div>
+</div>
+<div class="course-card" data-category="تصميم">
+  <img src="images/10.jpg" alt="3">
+  <div class="course-info">
+    <h3>صناعة الخدع والمؤثرات البصرية</h3>
+    <p>ابدأ تعلم الخدع البصرية VFX.</p>
+    <p class="price">15 ريال</p>
+    <a href="checkout.html" class="enroll-btn">اشترِ الآن</a>
+  </div>
+</div>
+      <div class="course-card" data-category="تصميم">
+  <img src="images/11.jpg" alt="3">
+  <div class="course-info">
+    <h3>أساسيات الفوتوشوب</h3>
+    <p>ابدأ تعلم التصميم باستخدام فوتوشوب من الصفر.</p>
+    <p class="price">30 ريال</p>
+    <a href="checkout.html" class="enroll-btn">اشترِ الآن</a>
+  </div>
+</div>
+
+<div class="course-card" data-category="تصميم">
+  <img src="images/12.jpg" alt="5">
+  <div class="course-info">
+    <h3>التصميم باستخدام Canva</h3>
+    <p>أنشئ تصاميم إبداعية بسهولة على Canva.</p>
+    <p class="price">30 ريال</p>
+    <a href="checkout.html" class="enroll-btn">اشترِ الآن</a>
+  </div>
+</div>
+
+<div class="course-card" data-category="تصميم">
+  <img src="images/13.jpg" alt="5">
+  <div class="course-info">
+    <h3>تصميم الشعارات</h3>
+    <p>اصنع شعارات احترافية باستخدام أدوات مجانية.</p>
+    <p class="price">30 ريال</p>
+    <a href="checkout.html" class="enroll-btn">اشترِ الآن</a>
+  </div>
+</div>
+
+<div class="course-card" data-category="تصميم">
+  <img src="images/14.jpg" alt="6">
+  <div class="course-info">
+    <h3>تصميم البروشورات</h3>
+    <p>تعلم تصميم مطبوعات دعائية بشكل احترافي.</p>
+    <p class="price">20 ريال</p>
+    <a href="checkout.html" class="enroll-btn">اشترِ الآن</a>
+  </div>
+</div>
+<div class="course-card" data-category="تصميم">
+  <img src="images/15.jpg" alt="6">
+  <div class="course-info">
+    <h3>تصميم التطبيقات</h3>
+    <p>تعلم تصميم التطبيقات وتعديلها</p>
+    <p class="price">30 ريال</p>
+    <a href="checkout.html" class="enroll-btn">اشترِ الآن</a>
+  </div>
+</div>
+<div class="course-card" data-category="تسويق">
+  <img src="images/16.jpg" alt="7">
+  <div class="course-info">
+    <h3>مبادئ التسويق</h3>
+    <p>تعرف على أساسيات التسويق وأنواعه الحديثة.</p>
+    <p class="price">20 ريال</p>
+    <a href="checkout.html" class="enroll-btn">اشترِ الآن</a>
+  </div>
+</div>
+
+<div class="course-card" data-category="تسويق">
+  <img src="images/17.jpg" alt="8">
+  <div class="course-info">
+    <h3>التسويق عبر الإنستقرام</h3>
+    <p>استفد من منصات التواصل لبناء علامتك.</p>
+    <p class="price">25 ريال</p>
+    <a href="checkout.html" class="enroll-btn">اشترِ الآن</a>
+  </div>
+</div>
+
+<div class="course-card" data-category="تسويق">
+  <img src="images/18.jpg" alt="8">
+  <div class="course-info">
+    <h3>اساسيات التسويق</h3>
+    <p>تعلم اساسيات الترويج وانشاء الاعلانات .</p>
+    <p class="price">20 ريال</p>
+    <a href="checkout.html" class="enroll-btn">اشترِ الآن</a>
+  </div>
+</div>
+
+<div class="course-card" data-category="تسويق">
+  <img src="images/19.jpg" alt="8">
+  <div class="course-info">
+    <h3> التسويق بالعمولة</h3>
+    <p>تعلم اساسيات التسويق بالعمولة واتقانها.</p>
+    <p class="price">20 ريال</p>
+    <a href="checkout.html" class="enroll-btn">اشترِ الآن</a>
+  </div>
+</div>
+
+<div class="course-card" data-category="تسويق">
+  <img src="images/20.jpg" alt="9">
+  <div class="course-info">
+    <h3>إعلانات فيسبوك</h3>
+    <p>كيفية تصميم وإطلاق حملات ممولة فعالة.</p>
+    <p class="price">120 ريال</p>
+    <a href="checkout.html" class="enroll-btn">اشترِ الآن</a>
+  </div>
+</div>
+
+<div class="course-card" data-category="ريادة">
+  <img src="images/21.jpg" alt="12">
+  <div class="course-info">
+    <h3>حماية المواقع</h3>
+    <p>تعلم واكتشف ثغرات المواقع المؤهلة للاختراق.</p>
+    <p class="price">20 ريال</p>
+    <a href="checkout.html" class="enroll-btn">اشترِ الآن</a>
+  </div>
+</div>
+
+<div class="course-card" data-category="ريادة">
+  <img src="images/22.jpg" alt="13">
+  <div class="course-info">
+    <h3>تركيب وصيانة الشبكات </h3>
+    <p>مهارات الشبكات للحصول على شهادة سيسكو CCNA.</p>
+    <p class="price">25 ريال</p>
+    <a href="checkout.html" class="enroll-btn">اشترِ الآن</a>
+  </div>
+</div>
+
+<div class="course-card" data-category="ريادة">
+  <img src="images/23.jpg" alt="14">
+  <div class="course-info">
+    <h3>الهكر الاخلاقي</h3>
+    <p>دورة الهكر الاخلاقي المعتمدة.</p>
+    <p class="price">30 ريال</p>
+    <a href="checkout.html" class="enroll-btn">اشترِ الآن</a>
+  </div>
+</div>
+
+<div class="course-card" data-category="ريادة">
+  <img src="images/24.jpg" alt="15">
+  <div class="course-info">
+    <h3>تعليم الهكر من الصفر</h3>
+    <p>اقوى كورسات الهكر تقدر بعده توصل لحدود بعيده .</p>
+    <p class="price">40 ريال</p>
+    <a href="checkout.html" class="enroll-btn">اشترِ الآن</a>
+  </div>
+</div>
+
+<div class="course-card" data-category="ريادة">
+  <img src="images/25.jpg" alt="16">
+  <div class="course-info">
+    <h3>اساسيات الكمبيوتر</h3>
+    <p>دورة شاملة لكل اساسيات الكمبيوتر</p>
+    <p class="price">30 ريال</p>
+    <a href="checkout.html" class="enroll-btn">اشترِ الآن</a>
+  </div>
+</div>
+<div class="course-card" data-category="تطوير">
+  <img src="images/26.jpg" alt="17">
+  <div class="course-info">
+    <h3>التحليل الفني</h3>
+    <p>دورات متعدده في التحليل الفني.</p>
+    <p class="price">20 ريال</p>
+    <a href="checkout.html" class="enroll-btn">اشترِ الآن</a>
+  </div>
+</div>
+
+<div class="course-card" data-category="تطوير">
+  <img src="images/27.jpg" alt="18">
+  <div class="course-info">
+    <h3>الاساسيات من الصفر</h3>
+    <p>تعليم اساسيات التداول من الصفر.</p>
+    <p class="price">25 ريال</p>
+    <a href="checkout.html" class="enroll-btn">اشترِ الآن</a>
+  </div>
+</div>
+
+<div class="course-card" data-category="تطوير">
+  <img src="images/28.jpg" alt="19">
+  <div class="course-info">
+    <h3>التحليل الشبكي</h3>
+    <p>احد فروع مدارس التحليل الرقمي.</p>
+    <p class="price">15 ريال</p>
+    <a href="checkout.html" class="enroll-btn">اشترِ الآن</a>
+  </div>
+</div>
+
+<div class="course-card" data-category="تطوير">
+  <img src="images/29.jpg" alt="20">
+  <div class="course-info">
+    <h3>الفوركس</h3>
+    <p>اقوى كورسات الفوركس .</p>
+    <p class="price">25 ريال</p>
+    <a href="checkout.html" class="enroll-btn">اشترِ الآن</a>
+  </div>
+</div>
+
+
+<div class="course-card" data-category="تطوير">
+  <img src="images/30.jpg" alt="21">
+  <div class="course-info">
+    <h3>التحليل الزمني والرقمي</h3>
+    <p>اقوى كورسات التحليل الزمني والرقمي.</p>
+    <p class="price">30 ريال</p>
+    <a href="checkout.html" class="enroll-btn">اشترِ الآن</a>
+  </div>
+</div>
+    </div>
+  </section>
+
+  
+<!-- إشعار منبثق -->
+<div id="promoPopup" class="popup">
+  <span class="close-btn" onclick="closePopup()">&times;</span>
+  <h3>🔥 خصم 50% على دورة البرمجة!</h3>
+  <p>سجل الآن قبل انتهاء العرض.</p>
+  <a href="#" class="btn">سجل الآن</a>
+</div>
+
+<div id="promoPopup" class="popup">
+  <span class="close-btn" onclick="closePopup()">&times;</span>
+  <h3>🔥 خصم 50% على دورة البرمجة!</h3>
+  <p>سجل الآن قبل انتهاء العرض.</p>
+  <p id="countdown"></p>
+  <a href="#" class="btn">سجل الآن</a>
+
+</div>
+
+<div class="course-card">
+  <img src="https://via.placeholder.com/300x200" alt="دورة">
+  <div class="course-info">
+    <h3>دورة البرمجة بلغة Python</h3>
+    <p>تعلم أساسيات البرمجة باستخدام بايثون.</p>
+    <p class="price">السعر: 50$</p>
+
+    <!-- ⭐ التقييم -->
+    <div class="rating">
+      <span data-star="5">★</span>
+      <span data-star="4">★</span>
+      <span data-star="3">★</span>
+      <span data-star="2">★</span>
+      <span data-star="1">★</span>
+    </div>
+
+    <!-- 📝 إضافة مراجعة -->
+    <textarea id="reviewText" placeholder="اكتب مراجعتك هنا..."></textarea>
+    <button class="review-btn" onclick="submitReview()">إرسال المراجعة</button>
+
+    <!-- ✅ عرض المراجعات -->
+    <div class="reviews" id="reviews">
+      <h4>المراجعات:</h4>
+      <ul id="reviewList"></ul>
+    </div>
+  </div>
+</div>
+
+  <footer class="footer">
+  <p>© جميع الحقوق محفوظة منصة دربك 2025</p>
+  <div class="social-icons">
+    <a href="https://wa.me/967773884115" target="_blank" aria-label="واتساب">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="https://instagram.com/s.a_w6" target="_blank" aria-label="انستقرام">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://t.me/967773884115" target="_blank" aria-label="تيليجرام">
+      <i class="fab fa-telegram-plane"></i>
+    </a>
+  </div>
+</footer>
+
+
+  <script>
+    function filterCourses(category) {
+      const cards = document.querySelectorAll(".course-card");
+      cards.forEach(card => {
+        if (category === "الكل" || card.dataset.category === category) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    }
+  // عرض الكروت بتدريج عند تحميل الصفحة
+  document.addEventListener("DOMContentLoaded", () => {
+    const cards = document.querySelectorAll(".course-card");
+
+    cards.forEach((card, index) => {
+      setTimeout(() => {
+        card.classList.add("visible");
+      }, index * 100); // التأخير بين الكروت (100ms)
+    });
+  });
+
+  // فلترة الكروت
+  function filterCourses(category) {
+    const cards = document.querySelectorAll(".course-card");
+    cards.forEach(card => {
+      if (category === "الكل" || card.dataset.category === category) {
+        card.style.display = "block";
+        setTimeout(() => card.classList.add("visible"), 100);
+      } else {
+        card.style.display = "none";
+        card.classList.remove("visible");
+      }
+    });
+  }
+
+  const toggleBtn = document.getElementById("toggle-mode");
+  toggleBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+    toggleBtn.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+  });
+  </script>
+
+</body>
+</html>
